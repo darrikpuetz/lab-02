@@ -1,7 +1,7 @@
 
 body {
   margin: auto;
-  width: 960px;
+  width: 1080px;
   text-align: center;
   font-family: 'Roboto Slab', serif;
   background-color: crimson;
@@ -42,12 +42,16 @@ header {
   margin: 40px;
 }
 footer {
-  background-color: darkgreen;
-  position: absolute;
+  background-color: darkmagenta;
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #efefef;
+  color: aliceblue;
   text-align: center;
+}
+
+select {
+  margin: 50px;
 }
