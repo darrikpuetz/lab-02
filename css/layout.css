@@ -11,3 +11,6 @@ body {
     text-align: center;
 }
 
+#photo-template {
+    display: none;
+}
