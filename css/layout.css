@@ -1,16 +1,19 @@
-
 div {
- float: left;
- border: 5px black;
- text-align: center;
+  float: left;
+  border: 5px black;
+  text-align: center;
 }
 
 body {
-    margin: auto;
-    width: 480px;
-    text-align: center;
+  margin: auto;
+  width: 480px;
+  text-align: center;
 }
 
 #photo-template {
-    display: none;
+  display: none;
+}
+
+.hidden {
+  display: none;
 }
