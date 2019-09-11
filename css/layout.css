@@ -1,13 +1,11 @@
-div {
-  float: left;
-  border: 5px black;
-  text-align: center;
-}
 
 body {
   margin: auto;
-  width: 480px;
+  width: 960px;
   text-align: center;
+  font-family: 'Roboto Slab', serif;
+  background-color: crimson;
+  color: ivory;
 }
 
 #photo-template {
@@ -16,4 +14,40 @@ body {
 
 .hidden {
   display: none;
+}
+
+img {
+  height: 250px;
+  width: 250px;
+}
+
+section {
+  float: left;
+  margin: 20px;
+  padding: 5px;
+}
+
+p {
+  margin: 5px;
+}
+
+div {
+  background-color: darkgreen;
+  border-radius: 5%;
+  margin: 5px;
+}
+
+header {
+  background-color: darkgreen;
+  margin: 40px;
+}
+footer {
+  background-color: darkgreen;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
 }
