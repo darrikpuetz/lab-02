@@ -44,3 +44,8 @@ As a user, I want a simple, clean looking UI so that my photo gallery clearly di
 Given that a user opens the application in the browser
 When the user navigates to the home page
 Then the images should be displayed in rows across the screen
+
+Feature #	Feature Name	        Time Est	   Start Est	 Finish Est	   Start Actual	   Finish Actual	Time Needed
+1	        Display images	    2 hours        	9:45	       11:15	      9:56	       11:00	          1.25 hours
+2	        Filter images	      1.5 hours	     11:15	      12:45	       11:16	          1:30 PM	       2.5 hours
+3	        Style the application	1.5 hours	    1:30	     3:00 PM	     1:30	            Not Done	     Unlimited
