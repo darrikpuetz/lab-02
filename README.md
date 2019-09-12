@@ -49,3 +49,27 @@ Feature #	Feature Name	        Time Est	   Start Est	 Finish Est	   Start Actual
 1	        Display images	    2 hours        	9:45	       11:15	      9:56	       11:00	          1.25 hours
 2	        Filter images	      1.5 hours	     11:15	      12:45	       11:16	          1:30 PM	       2.5 hours
 3	        Style the application	1.5 hours	    1:30	     3:00 PM	     1:30	            Not Done	     Unlimited
+
+## Feature 4: Pagination
+
+### Why are we implementing this feature?
+
+As a user, I want to have the ability to view additional images so that my view does not become cluttered.
+
+## Feature 5: Templating
+
+### Why are we implementing this feature?
+
+As a user, I want all of the images to be displayed in a consistent manner, so that it is easy to scan the collection of images.
+
+## Feature 6: Styling with Flexbox
+
+### Why are we implementing this feature?
+
+As a user, I want a simple, clean looking UI so that my photo gallery clearly displays the images.
+
+## Feature 7: Sort the images
+
+## Why are we implementing this feature?
+
+As a user, I want to be able to sort the images so that there is an order to their rendering.
