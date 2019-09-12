@@ -18,28 +18,21 @@
       <button class="pageButtons" data-page="0">Page 1</button>
       <button class="pageButtons" data-page="1">Page 2</button>
     </div>
+    <div class="sort">
+        <button class="sortButtons" data-sort="title">Sort by Title</button>
+        <button class="sortButtons" data-sort="horns">Sort by Horns</button>
+      </div>
     <select id="keyword-select">
       <option value="default">Filter by Keyword</option>
     </select>
   </header>
   <main>
     <div id="list-container"></div>
-
-    <!-- <section id="photo-template">
-      <h2></h2>
-      <img src="" alt="">
-      <div>
-        <p class="description"></p>
-        <p class="keyword"></p>
-        <p class="horns"></p>
-      </div>
-    </section>
- -->
     <script id="photo-template" type="text/x-handlebars-template">
-      <section data-keyword="{{keyword}}">
+      <section class="card" data-keyword="{{keyword}}">
         <h2>{{title}}</h2>
         <img src="{{image_url}}" alt="">
-        <div>
+        <div id='content'>
           <p class="description">{{description}}</p>
           <p class="keyword">{{keyword}}</p>
           <p class="horns">{{horns}}</p>

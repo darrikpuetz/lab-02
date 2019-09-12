@@ -22,9 +22,11 @@ img {
 }
 
 section {
-  float: left;
+  /* float: left; */
   margin: 20px;
   padding: 5px;
+  height: 370px;
+  width: 300px;
 }
 
 p {
@@ -40,6 +42,7 @@ div {
 header {
   background-color: darkgreen;
   margin: 40px;
+  width: 100%;
 }
 footer {
   background-color: darkmagenta;
@@ -59,4 +62,14 @@ select {
 
 .pageButtons {
   margin: 20px;
+}
+
+#content {
+  height: 120px;
+  width: 300px;
+  border: 50px;
+}
+
+.card {
+  flex-wrap: wrap;
 }
