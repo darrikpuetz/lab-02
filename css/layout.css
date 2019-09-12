@@ -30,11 +30,10 @@ section {
 }
 
 p {
-  margin: 5px;
+  margin: 10px;
 }
 
 div {
-  background-color: darkgreen;
   border-radius: 5%;
   margin: 5px;
 }
@@ -65,11 +64,35 @@ select {
 }
 
 #content {
-  height: 120px;
+  height: 150px;
   width: 300px;
   border: 50px;
+  margin: 8px;
 }
 
 .card {
   flex-wrap: wrap;
+  background-color: darkgreen;
+  border-radius: 15%;
+  height: 420px;
+  width: 310px;
+}
+
+#list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+
+#cardPic {
+  border-radius: 15%;
+}
+h2 {
+  margin: 8px;
+  font-size: 15px;
+}
+
+h1 {
+  margin: 15px;
+  font-size: 50px;
 }
