@@ -1,20 +1,3 @@
 * {
     box-sizing: border-box;
 }
-
-/* Link CSS from https://codepen.io/brenden/pen/RNZXqx */
-.wrapper{
-    margin:3em 0;
-  }
-
-
-a {
-    color: black;
-    background-color: white;
-}
-a.links:after,a.links:before,a.links:after{
-    left:50%;
-    -webkit-transform:translateX(-50%);
-            transform:translateX(-50%);
-}
-

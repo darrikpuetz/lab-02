@@ -1,6 +1,7 @@
 'use strict';
 
-const photos = [];
+let photos = [];
+const pageDataFiles = ['data/page-1.json', 'data/page-2.json'];
 
 function Photo(photo) {
   this.image_url = photo.image_url;
@@ -24,13 +25,14 @@ Photo.prototype.render = function() {
   $newSection.find('.description').text(this.description);
   $newSection.find('.keyword').text(this.keyword);
   $newSection.find('.horns').text(this.horns);
-  $('main').append($newSection);
+  $('#list-container').append($newSection);
 };
 
-function loadImages() {
+function loadImages(jsonFile) {
   console.log('load images');
-  $.get('data/page-1.json', data => {
-    console.log('got data', data);
+  $.get(jsonFile, data => {
+    console.log('got data', data.length);
+    photos = [];
     data.forEach(photo => {
       new Photo(photo);
     });
@@ -41,6 +43,7 @@ function loadImages() {
 
 function renderPhotos() {
   console.log('render photos', photos);
+  $('#list-container').empty();
   photos.forEach(photo => {
     photo.render();
   });
@@ -48,8 +51,8 @@ function renderPhotos() {
 
 function filterByKeyword(keyword) {
   console.log(keyword);
-  const $selected = $(`main>section[data-keyword="${keyword}"]`);
-  const $notSelected = $(`main>section[data-keyword!="${keyword}"]`);
+  const $selected = $(`#list-container>section[data-keyword="${keyword}"]`);
+  const $notSelected = $(`#list-container>section[data-keyword!="${keyword}"]`);
   console.log('selected: ', $selected);
   console.log('not selected: ', $notSelected);
 
@@ -73,6 +76,13 @@ function populateKeywords() {
 
   // for each keyword append and option element to the select element
   const $select = $('#keyword-select');
+  $select.empty();
+  // recreating the default option text
+  const $option = $('<option></option>');
+  $option.attr('value', 'default');
+  $option.text('Filter by Keyword');
+  $select.append($option);
+
   keywords.forEach(keyword => {
     const $option = $('<option></option>');
     $option.attr('value', keyword);
@@ -82,4 +92,17 @@ function populateKeywords() {
   $select.on('change', onSelectionChange);
 }
 
-loadImages();
+function onPageChange(e) {
+  const i = $(e.target).attr('data-page');
+  const jsonFile = pageDataFiles[i];
+  console.log(jsonFile);
+  loadImages(jsonFile);
+}
+
+function intPagination() {
+  $('.pageButtons').on('click', onPageChange);
+}
+
+
+loadImages(pageDataFiles[0]);
+intPagination();
