@@ -3,6 +3,8 @@
 let photos = [];
 const pageDataFiles = ['data/page-1.json', 'data/page-2.json'];
 
+let templateRender;
+
 function Photo(photo) {
   this.image_url = photo.image_url;
   this.title = photo.title;
@@ -14,18 +16,7 @@ function Photo(photo) {
 }
 
 Photo.prototype.render = function() {
-  const templateHtml = $('#photo-template').html();
-  console.log('template', templateHtml);
-  const $newSection = $('<section></section>');
-
-  $newSection.attr('data-keyword', this.keyword);
-  $newSection.html(templateHtml);
-  $newSection.find('h2').text(this.title);
-  $newSection.find('img').attr('src', this.image_url);
-  $newSection.find('.description').text(this.description);
-  $newSection.find('.keyword').text(this.keyword);
-  $newSection.find('.horns').text(this.horns);
-  $('#list-container').append($newSection);
+  $('#list-container').append(templateRender(this));
 };
 
 function loadImages(jsonFile) {
@@ -62,7 +53,9 @@ function filterByKeyword(keyword) {
 
 function onSelectionChange(e) {
   const keyword = e.target.value;
-  filterByKeyword(keyword);
+  if (keyword !== 'default') {
+    filterByKeyword(keyword);
+  }
 }
 
 function populateKeywords() {
@@ -103,6 +96,14 @@ function intPagination() {
   $('.pageButtons').on('click', onPageChange);
 }
 
+function initTemplateRender() {
+  // 1. Get the template from the HTML document
+  let template = $('#photo-template').html();
 
+  // 2. Use Handlebars to "compile" the HTML
+  templateRender = Handlebars.compile(template);
+}
+
+initTemplateRender();
 loadImages(pageDataFiles[0]);
 intPagination();
