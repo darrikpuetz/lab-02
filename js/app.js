@@ -29,7 +29,7 @@ Photo.prototype.render = function() {
 
 function loadImages() {
   console.log('load images');
-  $.get('assets/page-1.json', data => {
+  $.get('data/page-1.json', data => {
     console.log('got data', data);
     data.forEach(photo => {
       new Photo(photo);
