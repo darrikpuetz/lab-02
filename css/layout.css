@@ -53,5 +53,10 @@ footer {
 }
 
 select {
-  margin: 50px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.pageButtons {
+  margin: 20px;
 }
