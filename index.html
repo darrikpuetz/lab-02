@@ -15,14 +15,15 @@
   <header>
     <h1>The Gallery of Horns</h1>
     <div class="wrapper">
-      <a class="links" href="index.html">Home</a>
-        <a class="links" href="pages/page-2.html">More Images</a>
+        <button class="pageButtons" data-page="0">Page 1</button>
+        <button class="pageButtons" data-page="1">Page 2</button> 
       </div>
     <select id="keyword-select">
       <option value="default">Filter by Keyword</option>
     </select>
   </header>
   <main>
+    <div id="list-container"></div>
     <section id="photo-template">
       <h2></h2>
       <img src="" alt="">
