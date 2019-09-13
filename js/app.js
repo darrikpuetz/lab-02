@@ -103,13 +103,10 @@ function sortCards(sortComparison) {
 }
 
 function onSortChange(e) {
-  const order = $(e.target).attr('data-sort');
-  console.log(order);
   let sortComparison;
-  switch (order) {
+  switch ($(e.target).attr('data-sort')) {
   case 'title':
-    sortComparison = function v(a, b) { a.title.toUppercase() > b.title.toUppercase() ? 1 : -1;
-    };
+    sortComparison = (a, b) => a.title.toUpperCase() > b.title.toUpperCase() ? 1 : -1;
     break;
   case 'horns':
     sortComparison = (a, b) => a.horns - b.horns;
