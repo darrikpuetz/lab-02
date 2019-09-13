@@ -1,6 +1,6 @@
 'use strict';
 
-let photos = [];
+const photos = [];
 const pageDataFiles = ['data/page-1.json', 'data/page-2.json'];
 
 let templateRender;
@@ -23,7 +23,8 @@ function loadImages(jsonFile) {
   console.log('load images');
   $.get(jsonFile, data => {
     console.log('got data', data.length);
-    photos = [];
+    photos.splice(0);
+    console.log('photos len:', photos.length);
     data.forEach(photo => {
       new Photo(photo);
     });
@@ -92,8 +93,34 @@ function onPageChange(e) {
   loadImages(jsonFile);
 }
 
+function sortPhotos(sortComparison) {
+  photos.sort(sortComparison);
+}
+
+function sortCards(sortComparison) {
+  sortPhotos(sortComparison);
+  renderPhotos();
+}
+
+function onSortChange(e) {
+  let sortComparison;
+  switch ($(e.target).attr('data-sort')) {
+  case 'title':
+    sortComparison = (a, b) => a.title.toUpperCase() > b.title.toUpperCase() ? 1 : -1;
+    break;
+  case 'horns':
+    sortComparison = (a, b) => a.horns - b.horns;
+    break;
+  }
+  sortCards(sortComparison);
+}
+
 function intPagination() {
   $('.pageButtons').on('click', onPageChange);
+}
+
+function intSortButtons() {
+  $('.sortButtons').on('click', onSortChange);
 }
 
 function initTemplateRender() {
@@ -107,3 +134,4 @@ function initTemplateRender() {
 initTemplateRender();
 loadImages(pageDataFiles[0]);
 intPagination();
+intSortButtons();
